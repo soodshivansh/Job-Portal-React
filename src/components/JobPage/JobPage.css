@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+    height: 100vh;
+}
+
+.wrapper-page{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+
+    .wrapper-sidebar{
+        padding: 2rem;
+        height: inherit;
+        max-width: 25vw;
+        min-width: 25vw;
+        border-right: 1px solid rgb(205, 205, 205);
+    }
+
+    .wrapper-results{
+        width: inherit;
+        height: 100%;
+
+        .parent-wrapper-cards{
+            overflow-y: scroll;
+            height: calc(100% - 7vh);
+        }
+    }
+}
+
+.wrapper-cards{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+    z-index: -10;
+    
+    .card-body{
+        width: 100%;
+        padding: 20px;
+        border-radius: 15px;
+        border: #11110e 2px solid;
+
+        .card-text {
+            max-height: 4 * 1.2em;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+        }
+    }
+}
+
+
+@media screen and (max-width: 950px){
+
+    body{
+        height: fit-content;
+        overflow: visible;
+    }
+
+    .wrapper-page{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        overflow: visible;
+    
+        .wrapper-sidebar{
+            padding: 2rem;
+            height: inherit;
+            min-width: 100%;
+            border-right: none;
+        }
+    
+        .wrapper-results{
+            width: inherit;
+            height: 100%;
+    
+            .parent-wrapper-cards{  
+                overflow-y: scroll;
+                height: calc(100% - 7vh);
+            }
+        }
+    }
+    
+}
+
+
+/* HTML: <div class="loader"></div> */
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid;
+    border-color: #000 #0000;
+    animation: l1 1s infinite;
+  }
+  @keyframes l1 {to{transform: rotate(.5turn)}}
